@@ -15,6 +15,8 @@ Frontend: React, Vite, JavaScript, CSS
 
 Package Management: uv for the backend
 
+LLM: Gemini
+
 ##### Getting Started
 Follow these steps to set up and run the project locally.
 
