@@ -18,15 +18,8 @@ Package Management: uv for the backend
 ##### Getting Started
 Follow these steps to set up and run the project locally.
 
-1. Backend Setup
-Navigate to the backend directory.
-
-```
-cd backend
-```
-
-2. Install all Python dependencies using uv.
-3. 
+1. Install all Python dependencies using uv.
+2.  
 ```
 uv sync
 ```
@@ -34,6 +27,7 @@ uv sync
 3. Start the backend server. The API will be available at http://localhost:8000.
 
 ```
+cd src
 uvicorn app:app --reload
 ```
 
@@ -55,3 +49,13 @@ URL: http://localhost:8000/search?topic=climate
 Query Parameter: topic (string)
 
 Response: A list of analysis objects.
+
+#### Backend Design
+
+FastAPI for Performance: FastAPI was chosen for its high performance, as it's built on Starlette and Pydantic. Its asynchronous nature is ideal for handling I/O-bound tasks, such as communicating with the LLM and the database, without blocking the server.
+
+Separation of Concerns: The project follows a clear separation of concerns. The backend handles all business logic, data processing and persistence. This makes the system more scalable and easier to debug.
+
+SQLAlchemy for Data Management: SQLAlchemy was selected as the ORM to manage the database. It provides an elegant way to interact with the database using Python objects, abstracting away the complexities of raw SQL.
+
+RESTful API: The backend is built on a RESTful architecture, providing clear, standard endpoints (/analyze, /search) that are easy for the frontend to consume.
