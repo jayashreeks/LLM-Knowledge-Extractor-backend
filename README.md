@@ -21,25 +21,21 @@ Follow these steps to set up and run the project locally.
 1. Backend Setup
 Navigate to the backend directory.
 
-Bash
-
+```
 cd backend
+```
+
 2. Install all Python dependencies using uv.
-
-Bash
-
+3. 
+```
 uv sync
+```
+
 3. Start the backend server. The API will be available at http://localhost:8000.
 
-Bash
-
+```
 uvicorn app:app --reload
-
-Description: Searches for analyses by a specific topic.
-
-Query Parameters: topic (string)
-
-Response: A list of analysis objects.
+```
 
 #### **API Reference**
 POST /analyze
