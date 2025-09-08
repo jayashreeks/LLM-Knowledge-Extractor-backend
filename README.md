@@ -1,68 +1,61 @@
-# LLM-Knowledge-Extractor-backend
+## LLM-Knowledge-Extractor-backend
+This is a full-stack web application designed to analyze text and provide structured insights. It features a FastAPI backend for powerful text processing with a Large Language Model (LLM) and a modern React frontend for a clean, intuitive user interface.
 
-Overview
-This is a full-stack application designed to analyze text and provide structured analysis. It consists of a FastAPI backend for processing text with a Large Language Model (LLM) and a React frontend for user interaction and displaying the results.
+###**Key Features**
+**Intelligent Text Analysis**: Processes text to generate a title, a concise summary, sentiment, topics, and keywords.
 
-Features
-Text Analysis: Analyzes text to generate a title, a summary, a list of topics, keywords, and sentiment.
+**Search Functionality**: Allows users to search for and retrieve past analysis results based on topics.
 
-Search Functionality: Allows users to search for previously analyzed text by topic.
+**Modern UI**: A responsive and visually appealing user interface built with React, Vite, and custom CSS for a seamless user experience.
 
-Modern UI: A clean, responsive user interface built with React.
+####**Tech Stack**
+Backend: Python, FastAPI, uvicorn, SQLAlchemy, google-genai
 
-Backend (backend/)
-The backend is a FastAPI application that handles all text processing and data persistence.
+Frontend: React, Vite, JavaScript, CSS
 
-Prerequisites
-Python 3.12 or higher.
+Package Management: uv for the backend
 
-uv (Universal Installer)
+#####Getting Started
+Follow these steps to set up and run the project locally.
 
-Setup
-Navigate to the backend directory:
+1. Backend Setup
+Navigate to the backend directory.
 
 Bash
 
 cd backend
-Install dependencies using uv:
+2. Install all Python dependencies using uv.
 
 Bash
 
 uv sync
-Run the application with Uvicorn:
+3. Start the backend server. The API will be available at http://localhost:8000.
 
 Bash
 
 uvicorn app:app --reload
-The server will run on http://localhost:8000.
-
-API Endpoints
-POST /analyze
-
-Description: Analyzes a given text.
-
-Request Body:
-
-JSON
-
-{
-  "text": "The text to be analyzed."
-}
-Response:
-
-JSON
-
-{
-  "title": "...",
-  "summary": "...",
-  "topics": ["...", "..."],
-  "keywords": ["...", "..."],
-  "sentiment": "..."
-}
-GET /search?topic={query}
 
 Description: Searches for analyses by a specific topic.
 
 Query Parameters: topic (string)
+
+Response: A list of analysis objects.
+
+####**API Reference**
+POST /analyze
+Analyzes a block of text and saves the result to the database.
+
+URL: http://localhost:8000/analyze
+
+Request Body: {"text": "Your text to analyze."}
+
+Response: {"title": "...", "summary": "...", "sentiment": "...", "topics": ["..."], "keywords": ["..."]}
+
+GET /search?topic={query}
+Searches the database for past analyses containing the specified topic.
+
+URL: http://localhost:8000/search?topic=climate
+
+Query Parameter: topic (string)
 
 Response: A list of analysis objects.
