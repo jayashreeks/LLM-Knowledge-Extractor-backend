@@ -19,12 +19,12 @@ Package Management: uv for the backend
 Follow these steps to set up and run the project locally.
 
 1. Install all Python dependencies using uv.
-2.  
+     
 ```
 uv sync
 ```
 
-3. Start the backend server. The API will be available at http://localhost:8000.
+2. Start the backend server. The API will be available at http://localhost:8000.
 
 ```
 cd src
