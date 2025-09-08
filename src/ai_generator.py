@@ -35,7 +35,7 @@ async def process_with_llm(text: str) -> Dict:
     
     The JSON object must contain the following keys:
     - "summary": A 1 to 2 sentence brief summary of the text.
-    - "title": The title of the text, if one is clearly present. If not, use null.
+    - "title": The title of the text, if one is clearly present. If not, use Untitled.
     - "topics": A list of exactly 3 key topics from the text.
     - "sentiment": The overall sentiment of the text, which must be 'positive', 'neutral', or 'negative'.
 
